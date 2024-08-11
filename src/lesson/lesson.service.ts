@@ -60,7 +60,7 @@ export class LessonService {
         },
       });
 
-      const maxCourts = date.day() === 0 || date.day() === 6 ? 3 : 5; // 0 is Sunday, 6 is Saturday
+      const maxCourts = date.day() === 0 || date.day() === 6 ? 3 : 5;
 
       for (let hour = 7; hour < 23; hour++) {
         for (let minute = 0; minute < 60; minute += 30) {
@@ -180,7 +180,6 @@ export class LessonService {
   }
 
   private generatePassword(): string {
-    // 간단한 비밀번호 생성 로직. 필요에 따라 더 복잡한 로직으로 변경 가능합니다.
     return Math.random().toString(36).slice(-8);
   }
 
@@ -231,7 +230,6 @@ export class LessonService {
       throw new Error('정기 레슨만 수정할 수 있습니다.');
     }
 
-    // 업데이트할 내용 적용
     if (updateData.coachName) {
       const coach = await this.coachRepository.findOne({
         where: { name: updateData.coachName },

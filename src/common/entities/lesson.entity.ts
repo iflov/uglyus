@@ -9,13 +9,13 @@ export class Lesson {
   id: number;
 
   @Column()
-  lessonType: string; // 'one-time' or 'recurring'
+  lessonType: string;
 
   @Column({ nullable: true })
   frequencyPerWeek?: number;
 
   @Column()
-  duration: number; // 30 or 60 minutes
+  duration: number;
 
   @Column('timestamp')
   startTime: Date;
