@@ -30,6 +30,9 @@ export class Lesson {
   court: Court;
 
   @Column()
+  endTime: Date;
+
+  @Column()
   password: string;
 
   @Column()
